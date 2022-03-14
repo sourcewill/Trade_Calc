@@ -4,7 +4,10 @@
     <div class="relation-header" fxFlex="50px" fxLayoutAlign="center center">
       Lucro x Prejuizo
     </div>
-    <div class="relation-body" fxLayoutAlign="center center">
+    <div *ngIf="!this.hasData" class="relation-body" fxLayoutAlign="center center" style="padding: 30px;">
+        <p-skeleton shape="circle" size="200px"></p-skeleton>
+    </div>
+    <div *ngIf="this.hasData" class="relation-body" fxLayoutAlign="center center">
         <div echarts [options]="chartOption" class="pie-chart" ></div>
     </div>
   </div>

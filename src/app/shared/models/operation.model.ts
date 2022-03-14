@@ -10,3 +10,11 @@ export interface OperationModel{
     targetValue: number;
     stopValue: number;
 }
+
+export interface OperationResultsModel{
+    totalPosition: number;
+    profitValue: number;
+    profitPercent: number;
+    lossValue: number;
+    lossPercent: number;
+}

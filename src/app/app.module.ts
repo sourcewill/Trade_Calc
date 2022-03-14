@@ -9,6 +9,8 @@ import { OperationComponent } from './shared/components/operation/operation.comp
 import { SimulationComponent } from './shared/components/simulation/simulation.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { PieChartComponent } from './shared/components/pie-chart/pie-chart.component';
+import { SkeletonModule } from "primeng/skeleton";
+
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { PieChartComponent } from './shared/components/pie-chart/pie-chart.compo
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
+    SkeletonModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
     }),

@@ -12,19 +12,22 @@
   >
     <div class="card" fxLayout="column">
       <div class="card-title" fxFlex="50px">Posição total</div>
-      <div class="card-value">1000,00</div>
+      <div *ngIf="this.hasData" class="card-value">1000,00</div>
+      <p-skeleton *ngIf="!this.hasData" fxLayoutAlign="center center" width="200px" height="70px" borderRadius="16px"></p-skeleton>
     </div>
 
     <div class="card" fxLayout="column">
       <div class="card-title" fxFlex="50px">Caso alvo</div>
-      <div class="card-value positive">+1000,00</div>
-      <div class="card-percent">Lucro: <span>8,0%</span></div>
+      <div *ngIf="this.hasData" class="card-value positive">+1000,00</div>
+      <div *ngIf="this.hasData" class="card-percent">Lucro: <span>8,0%</span></div>
+      <p-skeleton *ngIf="!this.hasData" fxLayoutAlign="center center" width="200px" height="70px" borderRadius="16px"></p-skeleton>
     </div>
 
     <div class="card" fxLayout="column">
       <div class="card-title" fxFlex="50px">Caso stop</div>
-      <div class="card-value negative">-1000,00</div>
-      <div class="card-percent">Prejuízo: <span>4,0%</span></div>
+      <div *ngIf="this.hasData" class="card-value negative">-1000,00</div>
+      <div *ngIf="this.hasData" class="card-percent">Prejuízo: <span>4,0%</span></div>
+      <p-skeleton *ngIf="!this.hasData" fxLayoutAlign="center center" width="200px" height="70px" borderRadius="16px"></p-skeleton>
     </div>
   </div>
 </div>

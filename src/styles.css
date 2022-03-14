@@ -26,3 +26,8 @@ body{
     background-color: var(--main-bg-color);
     color: var(--white-grey);
 }
+
+/* SKELETON */
+.p-skeleton:after {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+}
