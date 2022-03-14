@@ -9,6 +9,9 @@
     --color-2: #283B55;
     --color-3: #00BBD8;
     --color-4: #02adc7;
+    --color-5 : #4E5B78;
+    --positive-text: #AEF1A3;
+    --negative-text: #F1A3BA;
   }
 
 *{

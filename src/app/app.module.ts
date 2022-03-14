@@ -7,6 +7,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeComponent } from './shared/components/home/home.component';
 import { OperationComponent } from './shared/components/operation/operation.component';
 import { SimulationComponent } from './shared/components/simulation/simulation.component';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { PieChartComponent } from './shared/components/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,15 @@ import { SimulationComponent } from './shared/components/simulation/simulation.c
     HomeComponent,
     OperationComponent,
     SimulationComponent,
+    PieChartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,55 @@
+.simulation-header {
+  background-color: var(--color-2);
+  color: var(--white-grey);
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.simulation-body {
+  background-color: var(--color-1);
+  color: var(--white-grey);
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 0px 0px 20px 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.card {
+  background-color: var(--color-5);
+  border-radius: 20px;
+  height: 180px;
+  width: 100%;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.card-title {
+  font-weight: 400;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+.card-value {
+  font-weight: 600;
+  font-size: 35px;
+}
+
+.positive{
+    color: var(--positive-text);
+}
+
+.negative{
+    color: var(--negative-text);
+}
+
+.card-percent {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.card-percent span {
+  font-weight: 600;
+}

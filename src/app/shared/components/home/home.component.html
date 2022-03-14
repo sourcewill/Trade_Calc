@@ -1,7 +1,20 @@
-<div class="container">
+<div class="home-container">
   <h1>Trade<span>Calc</span></h1>
-  <div fxLayout="row" fxLayoutGap="20px">
-    <app-operation fxFlex="300px"></app-operation>
-    <app-simulation fxFlex=""></app-simulation>
+  <div
+    fxLayout.gt-md="row"
+    fxLayout.md="row"
+    fxLayout.sm="column"
+    fxLayout.lt-sm="column"
+    fxLayoutGap="20px"
+  >
+    <app-operation
+      fxFlex="300px"
+      fxFlex.sm="100"
+      fxFlex.lt-sm="100"
+    ></app-operation>
+    <div fxLayout="column" fxFlex="" fxLayoutGap="20px">
+      <app-simulation></app-simulation>
+      <app-pie-chart></app-pie-chart>
+    </div>
   </div>
 </div>
