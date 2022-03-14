@@ -1,0 +1,36 @@
+<div class="operation" fxLayout="column">
+  <div class="operation-header" fxFlex="50px" fxLayoutAlign="center center">
+    Operação
+  </div>
+  <div class="operation-body">
+    <div fxLayout="column">
+      <label>Tipo</label>
+      <select name="type" id="type">
+          <option value="buy">Compra</option>
+          <option value="sell">Venda</option>
+      </select>
+    </div>
+
+    <div fxLayout="column">
+      <label>Quantidade</label>
+      <input type="text" />
+    </div>
+
+    <div fxLayout="column">
+      <label>Entrada (R$)</label>
+      <input type="text" />
+    </div>
+
+    <div fxLayout="column">
+      <label>Alvo (R$)</label>
+      <input type="text" />
+    </div>
+
+    <div fxLayout="column">
+      <label>Stop loss (R$)</label>
+      <input type="text" />
+    </div>
+
+    <button>Calcular</button>
+  </div>
+</div>

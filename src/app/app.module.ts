@@ -3,13 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TradeCalcComponent } from './shared/components/trade-calc/trade-calc.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HomeComponent } from './shared/components/home/home.component';
+import { OperationComponent } from './shared/components/operation/operation.component';
+import { SimulationComponent } from './shared/components/simulation/simulation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TradeCalcComponent
+    HomeComponent,
+    OperationComponent,
+    SimulationComponent,
   ],
   imports: [
     BrowserModule,

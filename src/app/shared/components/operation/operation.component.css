@@ -1,0 +1,63 @@
+.operation-header {
+  background-color: var(--color-2);
+  color: var(--white-grey);
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.operation-body {
+  background-color: var(--color-1);
+  color: var(--white-grey);
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.operation-body label {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.operation-body input {
+  border: 0;
+  height: 40px;
+  background: var(--white-grey);
+  box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding-left: 12px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.operation-body select {
+  border: 0;
+  height: 40px;
+  background: var(--white-grey);
+  box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding-left: 10px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.operation-body button {
+  background: var(--color-3);
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white-grey);
+  border: 0;
+  margin: 0;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.operation-body button:hover {
+  background-color: var(--color-4);
+}
