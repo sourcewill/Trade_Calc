@@ -21,7 +21,7 @@ export class PieChartComponent implements OnInit {
     },
     series: [
       {
-        name: 'Lucro x Risco',
+        name: 'Lucro x Prejuizo',
         type: 'pie',
         radius: ['40%', '70%'],
         avoidLabelOverlap: false,
@@ -43,7 +43,7 @@ export class PieChartComponent implements OnInit {
         },
         data: [
           { value: 8, name: 'Lucro' },
-          { value: 4, name: 'Risco' },
+          { value: 4, name: 'Prejuizo' },
         ],
         color: ['#AEF1A3', '#F1A3BA'],
       }
