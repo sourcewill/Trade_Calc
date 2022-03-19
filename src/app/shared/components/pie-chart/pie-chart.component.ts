@@ -8,7 +8,7 @@ import { EChartsOption } from 'echarts';
 })
 export class PieChartComponent implements OnInit {
 
-  hasData: boolean = false;
+  hasData: boolean = true;
 
   chartOption: EChartsOption = {};
 

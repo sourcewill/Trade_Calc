@@ -1,9 +1,9 @@
 .operation-header {
   background-color: var(--color-2);
   color: var(--white-grey);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 16px 16px 0px 0px;
 }
 
 .operation-body {
@@ -11,7 +11,7 @@
   color: var(--white-grey);
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 0px 0px 20px 20px;
+  border-radius: 0px 0px 16px 16px;
 }
 
 .operation-body label {
@@ -24,23 +24,25 @@
 .operation-body input {
   border: 0;
   height: 40px;
-  background: var(--white-grey);
-  box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.3);
+  background: var(--color-5);
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding-left: 12px;
   font-size: 15px;
   font-weight: 400;
+  color: var(--white-grey);
 }
 
 .operation-body select {
   border: 0;
   height: 40px;
-  background: var(--white-grey);
-  box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.3);
+  background: var(--color-5);
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding-left: 10px;
   font-size: 15px;
   font-weight: 400;
+  color: var(--white-grey);
 }
 
 .operation-body button {

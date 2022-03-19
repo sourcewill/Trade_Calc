@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimulationComponent implements OnInit {
 
-  hasData: boolean = false;
+  hasData: boolean = true;
 
   constructor() { }
 
