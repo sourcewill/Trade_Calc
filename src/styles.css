@@ -1,17 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import '../node_modules/primeicons/primeicons.css';
 
 :root {
-    --main-bg-color: #24313E;
-    --white-grey: #FDFEFF;
-    --color-1: #3D4861;
-    --color-2: #30425A;
-    --color-3: #00BBD8;
-    --color-4: #02adc7;
-    --color-5 : #65738D;
+    --main-bg-color: #1e2128;
+    --white-grey: #e3e6f1;
+    --color-1: #343746;
+    --color-2: #242632;
+    --color-3: #6158e7;
+    --color-4: #6c63e4;
+    --color-5 : #4e5368;
     --positive-text: #AEF1A3;
     --negative-text: #F1A3BA;
+    --positive: #17d640;
+    --negative: #ff4070;
   }
 
 *{

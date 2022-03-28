@@ -11,7 +11,10 @@
     fxLayoutAlign="space-between center"
   >
     <div class="card" fxLayout="column">
-      <div class="card-title" fxFlex="50px">Posição total</div>
+      <div fxLayout="row" class="card-title" fxFlex="50px" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <div class="icon-position"><i class="pi pi-wallet"></i></div>
+        <div>Posição total</div>
+      </div>
       <div *ngIf="!this.isLoadingOperationResults" class="card-value">
         <span>R$ </span>{{ this.operationResults.totalPosition | currency: 2 : 2 : false}}
       </div>
@@ -25,7 +28,10 @@
     </div>
 
     <div class="card" fxLayout="column">
-      <div class="card-title" fxFlex="50px">Caso alvo (R$)</div>
+      <div fxLayout="row" class="card-title" fxFlex="50px" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <div class="icon-target"><i class="pi pi-arrow-up-right"></i></div>
+        <div>Caso alvo (R$)</div>
+      </div>
       <div *ngIf="!this.isLoadingOperationResults" class="card-value positive">
         {{ this.operationResults.profitValue | currency: 2 : 2 : true }}
       </div>
@@ -42,7 +48,10 @@
     </div>
 
     <div class="card" fxLayout="column">
-      <div class="card-title" fxFlex="50px">Caso stop (RS)</div>
+      <div fxLayout="row" class="card-title" fxFlex="50px" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <div class="icon-stop"><i class="pi pi-arrow-down-right"></i></div>
+        <div>Caso stop (R$)</div>
+      </div>
       <div *ngIf="!this.isLoadingOperationResults" class="card-value negative">
         {{ this.operationResults.lossValue | currency: 2 : 2 : true }}
       </div>

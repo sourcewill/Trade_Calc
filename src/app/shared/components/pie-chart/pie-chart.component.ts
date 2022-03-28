@@ -52,8 +52,7 @@ export class PieChartComponent implements OnInit {
           emphasis: {
             label: {
               show: true,
-              fontSize: '20',
-              fontWeight: 'bold',
+              fontSize: '15',
               color: '#FDFEFF',
             },
           },
@@ -64,7 +63,7 @@ export class PieChartComponent implements OnInit {
             { value: profit, name: 'Lucro' },
             { value: loss, name: 'Prejuizo' },
           ],
-          color: ['#AEF1A3', '#F1A3BA'],
+          color: ['#17d640', '#ff4070'],
         },
       ],
     };
