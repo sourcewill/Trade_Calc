@@ -9,8 +9,11 @@ import { OperationComponent } from './shared/components/operation/operation.comp
 import { SimulationComponent } from './shared/components/simulation/simulation.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { PieChartComponent } from './shared/components/pie-chart/pie-chart.component';
-import { SkeletonModule } from "primeng/skeleton";
-
+import { SkeletonModule } from 'primeng/skeleton';
+import { StoreModule } from '@ngrx/store';
+import { operationReducer } from './shared/reducers/operation.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,8 +31,13 @@ import { SkeletonModule } from "primeng/skeleton";
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
     }),
+    StoreModule.forRoot({ operation: operationReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

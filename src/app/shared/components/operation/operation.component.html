@@ -6,8 +6,8 @@
     <div fxLayout="column">
       <label>Tipo</label>
       <select name="type" id="type">
-          <option value="buy">Compra</option>
-          <option value="sell">Venda</option>
+        <option value="buy">Compra</option>
+        <option value="sell">Venda</option>
       </select>
     </div>
 
@@ -31,6 +31,6 @@
       <input type="text" />
     </div>
 
-    <button>Calcular</button>
+    <button (click)="this.handleCalculate()">Calcular</button>
   </div>
 </div>

@@ -1,34 +1,43 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { EChartsOption } from 'echarts';
+import {
+  selectIsLoadingOperationResults,
+  selectOperationResults,
+} from '../../selectors/operation.selector';
 
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.css']
+  styleUrls: ['./pie-chart.component.css'],
 })
 export class PieChartComponent implements OnInit {
-
-  hasData: boolean = true;
+  isLoadingOperationResults: boolean = true;
 
   chartOption: EChartsOption = {};
 
-  constructor() { }
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
-    this.configureChart(400, 200);
+    this.store
+      .select(selectIsLoadingOperationResults)
+      .subscribe((data) => (this.isLoadingOperationResults = data));
+    this.store.select(selectOperationResults).subscribe((data) => {
+      this.configureChart(data.profitValue, data.lossValue);
+    });
   }
 
-  configureChart(profit: number, loss: number){
+  configureChart(profit: number, loss: number) {
     this.chartOption = {
       tooltip: {
-        trigger: 'item'
+        trigger: 'item',
       },
       legend: {
         bottom: '-5px',
         left: 'center',
         textStyle: {
-          color: '#FDFEFF'
-        }
+          color: '#FDFEFF',
+        },
       },
       series: [
         {
@@ -38,28 +47,26 @@ export class PieChartComponent implements OnInit {
           avoidLabelOverlap: false,
           label: {
             show: false,
-            position: 'center'
+            position: 'center',
           },
           emphasis: {
             label: {
               show: true,
               fontSize: '20',
               fontWeight: 'bold',
-              color: '#FDFEFF'
-              
-            }
+              color: '#FDFEFF',
+            },
           },
           labelLine: {
-            show: false
+            show: false,
           },
           data: [
             { value: profit, name: 'Lucro' },
             { value: loss, name: 'Prejuizo' },
           ],
           color: ['#AEF1A3', '#F1A3BA'],
-        }
-      ]
+        },
+      ],
     };
   }
-
 }
