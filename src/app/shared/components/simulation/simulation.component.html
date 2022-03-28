@@ -13,7 +13,7 @@
     <div class="card" fxLayout="column">
       <div class="card-title" fxFlex="50px">Posição total</div>
       <div *ngIf="!this.isLoadingOperationResults" class="card-value">
-        {{ this.operationResults.totalPosition }}
+        <span>R$ </span>{{ this.operationResults.totalPosition | currency: 2 : 2 : false}}
       </div>
       <p-skeleton
         *ngIf="this.isLoadingOperationResults"
@@ -25,12 +25,12 @@
     </div>
 
     <div class="card" fxLayout="column">
-      <div class="card-title" fxFlex="50px">Caso alvo</div>
+      <div class="card-title" fxFlex="50px">Caso alvo (R$)</div>
       <div *ngIf="!this.isLoadingOperationResults" class="card-value positive">
-        +{{ this.operationResults.profitValue }}
+        {{ this.operationResults.profitValue | currency: 2 : 2 : true }}
       </div>
       <div *ngIf="!this.isLoadingOperationResults" class="card-percent">
-        Lucro: <span>{{ this.operationResults.profitPercent }}%</span>
+        Lucro: <span>{{ this.operationResults.profitPercent | percent: 1 : true }}</span>
       </div>
       <p-skeleton
         *ngIf="this.isLoadingOperationResults"
@@ -42,12 +42,12 @@
     </div>
 
     <div class="card" fxLayout="column">
-      <div class="card-title" fxFlex="50px">Caso stop</div>
+      <div class="card-title" fxFlex="50px">Caso stop (RS)</div>
       <div *ngIf="!this.isLoadingOperationResults" class="card-value negative">
-        -{{ this.operationResults.lossValue }}
+        {{ this.operationResults.lossValue | currency: 2 : 2 : true }}
       </div>
       <div *ngIf="!this.isLoadingOperationResults" class="card-percent">
-        Prejuízo: <span>{{ this.operationResults.lossPercent }}%</span>
+        Prejuízo: <span>{{ this.operationResults.lossPercent | percent: 1 : true }}</span>
       </div>
       <p-skeleton
         *ngIf="this.isLoadingOperationResults"

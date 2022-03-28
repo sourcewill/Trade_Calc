@@ -23,7 +23,7 @@ export class PieChartComponent implements OnInit {
       .select(selectIsLoadingOperationResults)
       .subscribe((data) => (this.isLoadingOperationResults = data));
     this.store.select(selectOperationResults).subscribe((data) => {
-      this.configureChart(data.profitValue, data.lossValue);
+      this.configureChart(data.profitValue, Math.abs(data.lossValue));
     });
   }
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { setOperationResults } from '../../actions/operation.action';
+import { setIsLoadingOperationResults, setOperationResults } from '../../actions/operation.action';
+import { IOperation, IOperationResults, OperationTypeEnum } from '../../models/operation.model';
+import { calculateOperationResults, stringOperationAdapter } from '../../utils/operation.utils';
 
 @Component({
   selector: 'app-operation',
@@ -8,21 +10,27 @@ import { setOperationResults } from '../../actions/operation.action';
   styleUrls: ['./operation.component.css'],
 })
 export class OperationComponent implements OnInit {
-  constructor(private store: Store) {}
+  constructor(private store: Store) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  handleCalculate() {
-    this.store.dispatch(
-      setOperationResults({
-        payload: {
-          totalPosition: 0,
-          profitValue: 0,
-          profitPercent: 0,
-          lossValue: 0,
-          lossPercent: 0,
-        },
-      })
-    );
+  handleCalculate(
+    event: any,
+    typeString: string,
+    amountString: string,
+    entryValueString: string,
+    targetValueString: string,
+    stopValueString: string): void {
+
+    event.preventDefault();
+    this.store.dispatch(setIsLoadingOperationResults({ payload: true }));
+
+    let operation: IOperation = stringOperationAdapter(typeString, amountString, entryValueString, targetValueString, stopValueString);
+    let results: IOperationResults = calculateOperationResults(operation);
+
+    this.store.dispatch(setOperationResults({ payload: results }));
+    this.store.dispatch(setIsLoadingOperationResults({ payload: false }));
+
   }
+
 }

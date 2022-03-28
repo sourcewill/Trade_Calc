@@ -1,11 +1,24 @@
-<div class="operation" fxLayout="column">
+<form
+  class="operation"
+  fxLayout="column"
+  (submit)="
+    this.handleCalculate(
+      $event,
+      type.value,
+      amount.value,
+      entryValue.value,
+      targetValue.value,
+      stopValue.value
+    )
+  "
+>
   <div class="operation-header" fxFlex="50px" fxLayoutAlign="center center">
     Operação
   </div>
   <div class="operation-body">
     <div fxLayout="column">
       <label>Tipo</label>
-      <select name="type" id="type">
+      <select name="type" #type>
         <option value="buy">Compra</option>
         <option value="sell">Venda</option>
       </select>
@@ -13,24 +26,64 @@
 
     <div fxLayout="column">
       <label>Quantidade</label>
-      <input type="text" />
+      <input type="text" #amount placeholder="0" mask="0*" />
     </div>
 
     <div fxLayout="column">
       <label>Entrada (R$)</label>
-      <input type="text" />
+      <input
+        type="text"
+        #entryValue
+        mask="separator.2"
+        thousandSeparator="."
+        decimalMarker=","
+        prefix="R$ "
+        placeholder="R$ 00,00"
+        required
+      />
     </div>
 
     <div fxLayout="column">
       <label>Alvo (R$)</label>
-      <input type="text" />
+      <input
+        type="text"
+        #targetValue
+        mask="separator.2"
+        thousandSeparator="."
+        decimalMarker=","
+        prefix="R$ "
+        placeholder="R$ 00,00"
+        required
+      />
     </div>
 
     <div fxLayout="column">
       <label>Stop loss (R$)</label>
-      <input type="text" />
+      <input
+        type="text"
+        #stopValue
+        mask="separator.2"
+        thousandSeparator="."
+        decimalMarker=","
+        prefix="R$ "
+        placeholder="R$ 00,00"
+        required
+      />
     </div>
 
-    <button (click)="this.handleCalculate()">Calcular</button>
+    <button
+      (click)="
+        this.handleCalculate(
+          $event,
+          type.value,
+          amount.value,
+          entryValue.value,
+          targetValue.value,
+          stopValue.value
+        )
+      "
+    >
+      Calcular
+    </button>
   </div>
-</div>
+</form>

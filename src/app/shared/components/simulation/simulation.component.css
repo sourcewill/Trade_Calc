@@ -38,6 +38,11 @@
   font-size: 35px;
 }
 
+.card-value span{
+  font-weight: 200;
+  font-size: 25px;
+}
+
 .positive{
     color: var(--positive-text);
 }

@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { setOperationResults } from '../actions/operation.action';
+import { setIsLoadingOperationResults, setOperationResults } from '../actions/operation.action';
 import { IOperationResults } from '../models/operation.model';
 
 export const operationFeatureKey = 'operation';
@@ -25,8 +25,13 @@ export const _operationReducer = createReducer(
   on(setOperationResults, (state: IOperationState, action) => {
     return {
       ...state,
-      isLoadingOperationResults: false,
       operationResults: action.payload,
+    };
+  }),
+  on(setIsLoadingOperationResults, (state: IOperationState, action) => {
+    return {
+      ...state,
+      isLoadingOperationResults: action.payload,
     };
   })
 );

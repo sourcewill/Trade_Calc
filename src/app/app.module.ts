@@ -14,6 +14,9 @@ import { StoreModule } from '@ngrx/store';
 import { operationReducer } from './shared/reducers/operation.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { CurrencyPipe } from './shared/pipes/currency.pipe';
+import { PercentPipe } from './shared/pipes/percent.pipe';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { environment } from '../environments/environment';
     OperationComponent,
     SimulationComponent,
     PieChartComponent,
+    CurrencyPipe,
+    PercentPipe,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,7 @@ import { environment } from '../environments/environment';
       maxAge: 25,
       logOnly: environment.production,
     }),
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
